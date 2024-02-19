@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import { useContext } from "react";
 import logo from "../assets/Images/logo.png";
 import { HiMoon, HiOutlineMagnifyingGlass, HiSun } from "react-icons/hi2";
+import { ThemeContext } from "../Context/ThemeContext";
 
 function Header() {
-  const [toggle, setToggle] = useState(false);
+  const { theme, setTheme } = useContext(ThemeContext);
 
   return (
     <div className="flex items-center p-3 text-black">
@@ -12,20 +13,20 @@ function Header() {
         <HiOutlineMagnifyingGlass />
         <input
           type="text"
-          className="px-2 bg-transparent outline-none"
+          className="px-2 bg-transparent outline-none dark:bg-cyan-500"
           placeholder="Search Games"
         />
       </div>
       <div>
-        {toggle ? (
+        {theme === "light" ? (
           <HiMoon
             className="text-[35px] bg-slay-200 text-black p-1 rounded-full"
-            onClick={() => setToggle(!toggle)}
+            onClick={() => setTheme("dark")}
           />
         ) : (
           <HiSun
             className="text-[35px] bg-slay-200 text-black p-1 rounded-full"
-            onClick={() => setToggle(!toggle)}
+            onClick={() => setTheme("light")}
           />
         )}
       </div>
