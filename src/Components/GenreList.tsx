@@ -21,7 +21,7 @@ function GenreList() {
       {genreList.map((item: any, index: number) => (
         <div
           onClick={() => setActiveIndex(index)}
-          className={` flex gap-2 items-center mb-2 cursor-pointer hover:bg-gray-300 p-2 rounded-lg hover:dark:bg-gray-600 group
+          className={` flex gap-2 items-center mb-2 mr-6 cursor-pointer hover:bg-gray-300 p-2 rounded-lg hover:dark:bg-gray-600 group
         ${activeIndex === index ? "bg-gray-300 dark:bg-gray-600" : null}`}
         >
           <img
