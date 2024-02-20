@@ -13,20 +13,28 @@ function Header() {
         <HiOutlineMagnifyingGlass />
         <input
           type="text"
-          className="px-2 bg-transparent outline-none dark:bg-cyan-500"
+          className="px-2 bg-transparent outline-none "
           placeholder="Search Games"
         />
       </div>
       <div>
         {theme === "light" ? (
           <HiMoon
-            className="text-[35px] bg-slay-200 text-black p-1 rounded-full"
-            onClick={() => setTheme("dark")}
+            className="text-[35px] bg-slate-200 p-1 rounded-full"
+            onClick={() => {
+              setTheme("dark");
+              localStorage.setItem("theme", "dark");
+            }}
           />
         ) : (
           <HiSun
-            className="text-[35px] bg-slay-200 text-black p-1 rounded-full"
-            onClick={() => setTheme("light")}
+            className={`text-[35px] bg-slate-200  p-1 rounded-full ${
+              theme === "dark" && "bg-white text-black"
+            }`}
+            onClick={() => {
+              setTheme("light");
+              localStorage.setItem("theme", "light");
+            }}
           />
         )}
       </div>

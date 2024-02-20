@@ -1,5 +1,14 @@
+import GenreList from "../Components/GenreList";
+
 function Home() {
-  return <div>Home</div>;
+  return (
+    <div className="grid grid-cols-4 text-black">
+      <div className="bg-red-500 h-full hidden md:block">
+        <GenreList />
+      </div>
+      <div className="col-span-4 md:col-span-3 bg-blue-500">Game List</div>
+    </div>
+  );
 }
 
 export default Home;
